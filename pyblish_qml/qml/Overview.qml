@@ -1,4 +1,5 @@
 import QtQuick 2.3
+import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.1
 
 import Pyblish 0.1
@@ -101,6 +102,10 @@ Item {
                     }
                 }
 
+                ScrollBar.vertical: ScrollBar {
+                    policy: ScrollBar.AsNeeded
+                }
+
                 onActionTriggered: {
                     if (action.name == "repair")
                         app.repairInstance(index)
@@ -132,6 +137,10 @@ Item {
                         checkState = !checkState
                         app.toggleSection(checkState, text)
                     }
+                }
+
+                ScrollBar.vertical: ScrollBar {
+                    policy: ScrollBar.AsNeeded
                 }
 
                 onActionTriggered: {

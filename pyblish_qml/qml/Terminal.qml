@@ -1,4 +1,5 @@
 import QtQuick 2.3
+import QtQuick.Controls 2.0
 import QtQuick.Controls 1.3 as Controls
 import QtQuick.Controls.Styles 1.3 as ControlStyle
 import Pyblish 0.1
@@ -41,6 +42,10 @@ Column {
             delegate: Loader {
                 width: ListView.view.width
                 sourceComponent: Delegates.components[object.type]
+            }
+
+            ScrollBar.vertical: ScrollBar {
+                policy: ScrollBar.AsNeeded
             }
         }
     }
